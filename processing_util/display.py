@@ -71,3 +71,28 @@ def plot_distribution(image, channel_name=["Red", "Green", "Blue"]):
         ax.set_title(f"{channel_name[i]} channel")
 
     plt.show()
+
+
+def compare_display(
+    img1: np.array, img2: np.array, title1: str = "Original", title2: str = "Processed"
+):
+    """
+    Display two images side by side for comparison.
+
+    Parameters:
+    img1 (np.array): The first image.
+    img2 (np.array): The second image.
+    title1 (str): The title of the first image.
+    title2 (str): The title of the second image.
+
+    Returns:
+    None
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(15, 15))
+    axes[0].imshow(img1)
+    axes[0].set_title(title1)
+    axes[0].axis("off")
+    axes[1].imshow(img2)
+    axes[1].set_title(title2)
+    axes[1].axis("off")
+    plt.show()
